@@ -1065,8 +1065,9 @@ pre .javascript .function {
   display: block;
 }
 .header {
-  background: url("\themes
-ext\source\images\background.jpg");
+  background-image: url("https://s1.ax1x.com/2018/01/08/pmlfcn.jpg");
+  background-size: cover;
+  height: 400px;
 }
 .header-inner {
   position: relative;
@@ -1804,7 +1805,7 @@ ext\source\images\background.jpg");
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7a88c6;
+  background: #faf7ff;
 }
 .links-of-blogroll {
   font-size: 13px;
