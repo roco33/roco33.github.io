@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="SQL," />
 
 
 
@@ -94,14 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="https://roco33.github.io/categories/index.html">
+<meta name="description" content="177. Nth Highest SalaryQuestion#177 Method">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 177">
+<meta property="og:url" content="https://roco33.github.io/2018/01/24/leetcode-177/index.html">
 <meta property="og:site_name" content="roco33工事中">
+<meta property="og:description" content="177. Nth Highest SalaryQuestion#177 Method">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-06T07:07:02.000Z">
+<meta property="og:updated_time" content="2018-01-25T05:05:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
+<meta name="twitter:title" content="leetcode 177">
+<meta name="twitter:description" content="177. Nth Highest SalaryQuestion#177 Method">
 
 
 
@@ -130,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://roco33.github.io/categories/"/>
+  <link rel="canonical" href="https://roco33.github.io/2018/01/24/leetcode-177/"/>
 
 
 
 
 
-  <title>All categories | roco33工事中</title>
+  <title>leetcode 177 | roco33工事中</title>
   
 
 
@@ -267,40 +271,160 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://roco33.github.io/2018/01/24/leetcode-177/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="roco33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="roco33工事中">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">All categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                No categories
-            </div>
-            <div class="category-all">
+          <h1 class="post-title" itemprop="name headline">leetcode 177</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-            </div>
-          </div>
-        
-      </div>
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T22:59:47-06:00">
+                2018-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/24/leetcode-177/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/24/leetcode-177/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <script src="\assets\js\APlayer.min.js"> </script><h2 id="177-Nth-Highest-Salary"><a href="#177-Nth-Highest-Salary" class="headerlink" title="177. Nth Highest Salary"></a>177. Nth Highest Salary</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p><a href="https://leetcode.com/problems/nth-highest-salary/description/" target="_blank" rel="external">#177</a></p>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><a id="more"></a>
+<p><code>LIMIT</code> clause can control the number of records to return.</p>
+<p>Syntax in last post, one thing to note is <code>OFFSET</code> can only take constant integer, <code>N-1</code> is not valid. One way to get around is to set <code>N = N - 1</code></p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary</div><div class="line"><span class="keyword">FROM</span> Employee</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></div><div class="line"><span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> N - <span class="number">1</span></div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> getNthHighestSalary(N <span class="built_in">INT</span>) <span class="keyword">RETURNS</span> <span class="built_in">INT</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line">    <span class="keyword">SET</span> N = N<span class="number">-1</span>;</div><div class="line">  RETURN (</div><div class="line">      # Write your MySQL query statement below.</div><div class="line">      <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary</div><div class="line">      <span class="keyword">FROM</span> Employee</div><div class="line">      <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></div><div class="line">      <span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> N</div><div class="line">  );</div><div class="line"><span class="keyword">END</span></div></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SQL/" rel="tag"># SQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/24/leetcode-176/" rel="next" title="leetcode 176">
+                <i class="fa fa-chevron-left"></i> leetcode 176
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -340,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -407,6 +540,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#177-Nth-Highest-Salary"><span class="nav-number">1.</span> <span class="nav-text">177. Nth Highest Salary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method"><span class="nav-number">1.2.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.3.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.3.1.</span> <span class="nav-text">Algorithm</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -520,10 +669,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -544,9 +693,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://roco33.github.io/categories/index.html';
-          this.page.identifier = 'categories/index.html';
-          this.page.title = 'All categories';
+          this.page.url = 'https://roco33.github.io/2018/01/24/leetcode-177/';
+          this.page.identifier = '2018/01/24/leetcode-177/';
+          this.page.title = 'leetcode 177';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://roco33.disqus.com/embed.js';
