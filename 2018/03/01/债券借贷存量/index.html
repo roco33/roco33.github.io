@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,爬虫,债券," />
 
 
 
@@ -94,14 +94,20 @@
 
 
 
+<meta name="description" content="用BeautifulSoup+request搭的简单爬虫，抓取中债登债券借贷存量数据。">
+<meta name="keywords" content="Python,爬虫,债券">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test_1">
-<meta property="og:url" content="https://roco33.github.io/2018/02/21/test-1/index.html">
+<meta property="og:title" content="债券借贷存量">
+<meta property="og:url" content="https://roco33.github.io/2018/03/01/债券借贷存量/index.html">
 <meta property="og:site_name" content="roco33工事中">
+<meta property="og:description" content="用BeautifulSoup+request搭的简单爬虫，抓取中债登债券借贷存量数据。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-21T16:59:48.000Z">
+<meta property="og:image" content="https://roco33.github.io/images/bond_borrowing_output.png">
+<meta property="og:updated_time" content="2018-03-02T07:06:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test_1">
+<meta name="twitter:title" content="债券借贷存量">
+<meta name="twitter:description" content="用BeautifulSoup+request搭的简单爬虫，抓取中债登债券借贷存量数据。">
+<meta name="twitter:image" content="https://roco33.github.io/images/bond_borrowing_output.png">
 
 
 
@@ -130,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://roco33.github.io/2018/02/21/test-1/"/>
+  <link rel="canonical" href="https://roco33.github.io/2018/03/01/债券借贷存量/"/>
 
 
 
 
 
-  <title>test_1 | roco33工事中</title>
+  <title>债券借贷存量 | roco33工事中</title>
   
 
 
@@ -279,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://roco33.github.io/2018/02/21/test-1/">
+    <link itemprop="mainEntityOfPage" href="https://roco33.github.io/2018/03/01/债券借贷存量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="roco33">
@@ -296,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test_1</h1>
+          <h1 class="post-title" itemprop="name headline">债券借贷存量</h1>
         
 
         <div class="post-meta">
@@ -308,8 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-21T10:50:39-06:00">
-                2018-02-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T22:45:29-06:00">
+                2018-03-01
               </time>
             
 
@@ -327,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/21/test-1/#comments" itemprop="discussionUrl">
+                <a href="/2018/03/01/债券借贷存量/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/21/test-1/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/01/债券借贷存量/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,8 +363,11 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><p><div class="iec_environment" data-n="5" data-bh="790" data-sh="1540" data-id="rygAWQivf1802" data-link="http://ieconomics.com/edit/china"></div><script src="https://ieconomics.com/cdn/share/js/share_env.js"></script></p>
-<iframe src="//fred.stlouisfed.org/graph/graph-landing.php?g=ixPZ&width=670&height=475" scrolling="no" frameborder="0" style="overflow:hidden; width:670px; height:525px;" allowtransparency="true"></iframe>
+        <script src="\assets\js\APlayer.min.js"> </script><p>用BeautifulSoup+request搭的简单爬虫，抓取中债登债券借贷存量数据。</p>
+<p><img src="/images/bond_borrowing_output.png" alt="Output"></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">import tushare as ts</div><div class="line">from datetime import datetime</div><div class="line">from urllib import request</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">import pandas as pd</div><div class="line"></div><div class="line">tradeDays = ts.trade_cal()</div><div class="line"># 日期string转成datetime类型</div><div class="line">tradeDays.iloc[:,0] = tradeDays.iloc[:,0].apply(lambda x: datetime.strptime(x,&apos;%Y-%m-%d&apos;))</div><div class="line"></div><div class="line"># 日期区间</div><div class="line">def get_date(y,m,d):</div><div class="line">    start_date = datetime(y,m,d)</div><div class="line">    date_range = tradeDays[(tradeDays.iloc[:,0] &gt;= start_date) </div><div class="line">                           &amp; (tradeDays.iloc[:,1] == 1) </div><div class="line">                           &amp; (tradeDays.iloc[:,0] &lt; datetime.today())]</div><div class="line">    return date_range.iloc[:,0]</div><div class="line"></div><div class="line"></div><div class="line"># 获取指定日期数据</div><div class="line">def get_daily(date,code):</div><div class="line">    year = date.year</div><div class="line">    month = date.month</div><div class="line">    day = date.day</div><div class="line">    url1 = &apos;http://www.chinabond.com.cn/jsp/include/EJB/jdtj_dzzq.jsp?sel4=1&amp;tbSelYear6=&apos;</div><div class="line">    url2 = &apos;&amp;tbSelMonth6=&apos;</div><div class="line">    url3 = &apos;&amp;calSelectedDate6=&apos;</div><div class="line">    url4 = &apos;&amp;ZQFXRJD1=00&amp;FUXFSJD1=00&amp;JXFSJD2=00&amp;JDQX2=00&amp;ZQFXRJD3=00&amp;ZQFXRJD4=00&amp;I_ZQDM_JD=&apos;</div><div class="line">    url = url1 + str(year) + url2 + str(month) + url3 + str(day) + url4 + str(code)</div><div class="line">    page = request.urlopen(url)</div><div class="line">    soup = BeautifulSoup(page, &apos;html.parser&apos;, from_encoding=&apos;gb18030&apos;)</div><div class="line">    try:</div><div class="line">        outstanding = int(float(soup.find_all(&apos;td&apos;,text=str(code))[0].next_sibling.next_sibling.string.strip().replace(&apos;,&apos;,&apos;&apos;)))</div><div class="line">    except:</div><div class="line">        outstanding = 0</div><div class="line">    return outstanding</div><div class="line"></div><div class="line"></div><div class="line">def main():</div><div class="line">    bondList = [170215, 170210]</div><div class="line">    outstandingBorrowing = pd.DataFrame(columns=bondList)</div><div class="line"></div><div class="line">    date_range = get_date(2017,6,1)</div><div class="line">    </div><div class="line">    for code in bondList:</div><div class="line">        out = []</div><div class="line">        for date in date_range:</div><div class="line">            out.append(get_daily(date, code))</div><div class="line">            print(&quot;&#123;&#125; &#123;&#125;: &#123;&#125;&quot;.format(str(date.date()),str(code),out[-1]))</div><div class="line">        outstandingBorrowing[code] = out</div><div class="line">    </div><div class="line">    outstandingBorrowing.set_index(date_range).to_csv(&apos;bond_borrowing_outstanding.csv&apos;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -373,6 +382,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+            <a href="/tags/债券/" rel="tag"># 债券</a>
+          
+        </div>
+      
 
       
       
@@ -382,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/24/leetcode-177/" rel="next" title="leetcode 177">
-                <i class="fa fa-chevron-left"></i> leetcode 177
+              <a href="/2018/02/21/test-1/" rel="next" title="test_1">
+                <i class="fa fa-chevron-left"></i> test_1
               </a>
             
           </div>
@@ -391,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/01/债券借贷存量/" rel="prev" title="债券借贷存量">
-                债券借贷存量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -657,9 +672,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://roco33.github.io/2018/02/21/test-1/';
-          this.page.identifier = '2018/02/21/test-1/';
-          this.page.title = 'test_1';
+          this.page.url = 'https://roco33.github.io/2018/03/01/债券借贷存量/';
+          this.page.identifier = '2018/03/01/债券借贷存量/';
+          this.page.title = '债券借贷存量';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://roco33.disqus.com/embed.js';
