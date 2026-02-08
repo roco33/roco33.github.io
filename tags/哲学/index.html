@@ -9,8 +9,8 @@
   <link href="//fonts.googleapis.com/css?family=Inter:300,400,500,600,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="/css/main.css" rel="stylesheet" type="text/css" />
   
-  <link rel="canonical" href="https://roco33.github.io/tags/"/>
-  <title>Tags | roco33的notebook</title>
+  <link rel="canonical" href="https://roco33.github.io/tags/哲学/"/>
+  <title>哲学 | roco33的notebook</title>
   
   <style>
     :root {
@@ -93,44 +93,32 @@
       font-size: 0.9rem;
     }
     
-    .tag-list {
-      list-style: none;
-      padding: 0;
+    .post-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--glass-border);
     }
     
-    .tag-item {
-      margin-bottom: 1rem;
+    .post-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
     
-    .tag-link {
-      display: inline-block;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
+    .post-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .post-title a {
       color: var(--primary-color);
-      font-weight: 500;
-      transition: all 0.2s ease;
+      text-decoration: none;
     }
     
-    .tag-link:hover {
-      background: var(--accent-color);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .tag-count {
-      background: var(--accent-color);
-      color: white;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      margin-left: 0.5rem;
+    .post-date {
+      color: var(--secondary-color);
+      font-size: 0.9rem;
     }
     
     @media (max-width: 768px) {
@@ -155,27 +143,13 @@
     <main id="main" class="main">
       <div class="content">
         <div class="glass-effect">
-          <h1>Tags</h1>
-          <ul class="tag-list">
-            <li class="tag-item">
-              <a href="/tags/Hello-World/" class="tag-link">
-                Hello World
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/编程/" class="tag-link">
-                编程
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/哲学/" class="tag-link">
-                哲学
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-          </ul>
+          <h1>哲学</h1>
+          <div class="post-item">
+            <h2 class="post-title">
+              <a href="/2026/02/08/hello-world/">Hello World: 从零开始的数字之旅</a>
+            </h2>
+            <div class="post-date">2026-02-08</div>
+          </div>
         </div>
       </div>
     </main>
