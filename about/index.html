@@ -13,15 +13,20 @@
   
   <style>
     :root {
-      --glass-bg: rgba(255, 255, 255, 0.8);
-      --glass-border: rgba(255, 255, 255, 0.2);
-      --glass-blur: 10px;
+      --glass-bg: rgba(255, 255, 255, 0.9);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-blur: 12px;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --primary-color: #222;
+      --secondary-color: #666;
     }
     
     @media (prefers-color-scheme: dark) {
       :root {
-        --glass-bg: rgba(34, 34, 34, 0.8);
-        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-bg: rgba(34, 34, 34, 0.9);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --primary-color: #fff;
+        --secondary-color: #aaa;
       }
     }
     
@@ -30,7 +35,7 @@
       backdrop-filter: blur(var(--glass-blur));
       -webkit-backdrop-filter: blur(var(--glass-blur));
       border: 1px solid var(--glass-border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 2rem;
       margin: 2rem auto;
       max-width: 600px;
@@ -45,37 +50,60 @@
     }
     
     body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      font-family: var(--font-family); 
       line-height: 1.6; 
       margin: 0; 
       padding: 0; 
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+      color: var(--primary-color);
     }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      }
+    }
+    
     .container { 
       max-width: 1200px; 
       margin: 0 auto; 
       padding: 0 20px; 
     }
+    
     .header { 
-      padding: 1rem 0; 
-      border-bottom: 1px solid #eee; 
+      padding: 2rem 0 1rem 0; 
+      text-align: center;
     }
+    
+    .site-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    
     .main { 
       display: flex; 
       min-height: calc(100vh - 200px); 
     }
+    
     .content { 
       flex: 1; 
       padding: 2rem 0; 
     }
+    
     .footer { 
       text-align: center; 
       padding: 2rem 0; 
-      border-top: 1px solid #eee; 
-      color: #666; 
+      color: var(--secondary-color);
+      font-size: 0.9rem;
     }
+    
     @media (max-width: 768px) {
       .main { 
         flex-direction: column; 
+      }
+      .site-title {
+        font-size: 2rem;
       }
     }
   </style>
@@ -83,45 +111,28 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
   <div class="container">
-    <div class="headband"></div>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
-        <div class="site-brand-wrapper">
-          <div class="site-meta">
-            <div class="custom-logo-site-title">
-              <a href="/" class="brand" rel="start">
-                <span class="logo-line-before"><i></i></span>
-                <span class="site-title">roco33工事中</span>
-                <span class="logo-line-after"><i></i></span>
-              </a>
-            </div>
-            <p class="site-subtitle">Under Construction</p>
-          </div>
-        </div>
+      <div class="site-brand-wrapper">
+        <h1 class="site-title">roco33工事中</h1>
       </div>
     </header>
 
     <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            <div class="glass-effect">
-              <img class="avatar-img" src="/images/avatar.jpg" alt="roco33 avatar" />
-              <h1>About</h1>
-              <p>保持神秘。</p>
-            </div>
-          </div>
+      <div class="content">
+        <div class="glass-effect">
+          <img class="avatar-img" src="/images/avatar.jpg" alt="roco33 avatar" />
+          <h1>About</h1>
+          <p>保持神秘。</p>
+          <p style="margin-top: 1.5rem; color: var(--secondary-color); font-size: 0.9rem;">
+            本网站内容由 roco33 的 AI 助理基于对日常所见内容的深入理解生成。
+          </p>
         </div>
       </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
-          &copy; 2026
-          <span class="author">roco33</span>
-        </div>
+      <div class="copyright">
+        &copy; 2026 roco33
       </div>
     </footer>
   </div>
