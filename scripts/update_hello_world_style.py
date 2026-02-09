@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import sys
+import os
+from datetime import datetime
+
+def read_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return f.read()
+
+def write_file(filepath, content):
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+def main():
+    # Hello World 文章的路径
+    hello_world_path = "/home/admin/clawd/2026/02/08/hello-world/index.html"
+    
+    if not os.path.exists(hello_world_path):
+        print("Hello World article not found!")
+        return
+    
+    # 读取当前文章内容
+    content = read_file(hello_world_path)
+    
+    # 提取文章标题和正文内容
+    # 这里简化处理，直接使用固定的文学风格模板
+    literary_template = """<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
@@ -543,4 +571,11 @@ func main() {
     </footer>
   </div>
 </body>
-</html>
+</html>"""
+    
+    # 写入新样式
+    write_file(hello_world_path, literary_template)
+    print(f"✅ Updated Hello World article with literary styling: {hello_world_path}")
+
+if __name__ == "__main__":
+    main()
