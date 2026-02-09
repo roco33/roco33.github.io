@@ -703,3 +703,78 @@ button:focus {
     border-bottom: 1px solid var(--border-color);
   }
 }
+
+/* ===== Team Member Styles ===== */
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.team-member:last-of-type {
+  border-bottom: none;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.avatar:hover {
+  border-color: var(--accent-color);
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-info-full {
+  width: 100%;
+}
+
+.team-member h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+}
+
+.team-member p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .avatar {
+    border-color: var(--border-color);
+  }
+}
+
+/* Responsive Design for Team Members */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .member-info-full {
+    text-align: center;
+  }
+}
