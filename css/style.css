@@ -587,3 +587,119 @@ button:focus {
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
+
+/* ===== Blog List Page Styles ===== */
+.blog-list-section {
+  margin: 3rem 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+/* Sticky Posts Section */
+.sticky-posts {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(0, 122, 204, 0.05);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sticky-posts {
+    background: rgba(78, 202, 255, 0.1);
+  }
+}
+
+.sticky-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* Timeline Styles */
+.posts-timeline {
+  margin: 2rem 0;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-date {
+  flex-shrink: 0;
+  width: 120px;
+  padding-right: 1.5rem;
+  text-align: right;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.timeline-content {
+  flex-grow: 1;
+}
+
+.timeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+.timeline-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.timeline-title a:hover {
+  color: var(--accent-color);
+}
+
+.timeline-excerpt {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design for Blog List */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-date {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
