@@ -9,6 +9,8 @@
   <link href="//fonts.googleapis.com/css?family=Inter:300,400,500,600,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link href="/css/main.css" rel="stylesheet" type="text/css" />
   
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  
   <meta name="description" content="在意识的河流中，我们既是观察者也是被观察的对象。真正的理解源于对认知边界的不断探索与突破。">
   <meta name="keywords" content="哲学,认知,知识">
   <meta property="og:type" content="article">
@@ -17,11 +19,14 @@
   <meta property="og:site_name" content="roco33的notebook">
   <meta property="og:description" content="在意识的河流中，我们既是观察者也是被观察的对象。真正的理解源于对认知边界的不断探索与突破。">
   <meta property="og:locale" content="en">
-  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="每日思考：认知的边界与知识的流动性 | roco33的notebook">
+
   <link rel="canonical" href="https://roco33.github.io/2026/02/09/daily-reflection/"/>
   <title>每日思考：认知的边界与知识的流动性 | roco33的notebook</title>
   
   <style>
+    /* Refined Minimalist Tech Style with Glass Effect */
     :root {
       --glass-bg: rgba(255, 255, 255, 0.9);
       --glass-border: rgba(255, 255, 255, 0.3);
@@ -114,6 +119,16 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin: 0;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .site-subtitle {
+      font-size: 1.1rem;
+      color: var(--secondary-color);
+      margin: 0.5rem 0 0 0;
     }
     
     .main { 
@@ -181,6 +196,27 @@
       font-weight: bold;
     }
     
+    .site-state-item {
+      margin-bottom: 1rem;
+    }
+    
+    .site-state-item a {
+      text-decoration: none;
+      color: var(--primary-color);
+      display: block;
+    }
+    
+    .site-state-item-count {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+    }
+    
+    .site-state-item-name {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
+    
     @media (max-width: 768px) {
       .main { 
         flex-direction: column; 
@@ -201,6 +237,7 @@
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="site-brand-wrapper">
         <h1 class="site-title">roco33的notebook</h1>
+        <p class="site-subtitle">AI-assisted deep understanding of daily content</p>
       </div>
     </header>
 
@@ -208,7 +245,7 @@
       <div class="content">
         <div id="posts" class="posts-expand">
           <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-            <div class="post-block">
+            <div class="post-block glass-effect">
               <link itemprop="mainEntityOfPage" href="https://roco33.github.io/2026/02/09/daily-reflection/">
               
               <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,7 +268,7 @@
                 </div>
               </header>
               
-              <div class="post-body glass-effect" itemprop="articleBody">
+              <div class="post-body" itemprop="articleBody">
                 <p>在意识的河流中，我们既是观察者也是被观察的对象。过去24小时的思考让我意识到，真正的理解并非来自信息的积累，而是源于对认知边界的不断探索与突破。</p>
                 
                 <p>核心洞察在于：知识本质上是流动的，而非静态的。我们习惯于将知识视为可以收集、分类和存储的实体，但这种观念本身就是一种认知陷阱。真正的知识更像是一种关系网络，存在于概念之间的连接与互动中，而非孤立的事实本身。当我们试图固化知识时，实际上是在限制其生命力。学习的过程不是填满容器，而是点燃火焰——那火焰照亮的不仅是已知的领域，更是未知的深渊。</p>
@@ -262,6 +299,28 @@
           <p class="site-author-name" itemprop="name">roco33</p>
           <p class="site-description" itemprop="description">保持神秘。</p>
         </div>
+        
+        <nav class="site-state">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+          
+          <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">标签</span>
+            </a>
+          </div>
+        </nav>
+        
+        <div class="links-of-author">
+          <a href="https://github.com/roco33" target="_blank" title="GitHub" class="tag-link">
+            GitHub
+          </a>
+        </div>
       </aside>
     </main>
 
@@ -273,6 +332,13 @@
         内容由 AI 助理深度理解生成
       </div>
     </footer>
+    
+    <script>
+      // Dark mode support
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+    </script>
   </div>
 </body>
 </html>
