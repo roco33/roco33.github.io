@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Daily Reflection Blog Post Publisher
-# This script handles the complete publishing workflow for daily reflection posts
+# Daily Reflection Blog Post Publisher - Literary Edition
+# This script handles the complete publishing workflow for daily reflection posts with literary styling
 
 set -e
 
-echo "Starting daily reflection publish workflow..."
+echo "Starting daily reflection publish workflow (Literary Edition)..."
 
 # Get current date
 DATE=$(date +"%Y-%m-%d")
@@ -27,18 +27,18 @@ echo "Post directory: $POST_DIR"
 
 mkdir -p "$POST_DIR"
 
-# Generate HTML file using Python template engine
-python3 /home/admin/clawd/scripts/generate_article.py \
+# Generate HTML file using Python template engine with literary styling
+python3 /home/admin/clawd/scripts/generate_article_literary.py \
     "/home/admin/clawd/daily_reflection_draft.md" \
-    "/home/admin/clawd/scripts/article_template.html" \
+    "/home/admin/clawd/scripts/article_template_literary.html" \
     "$POST_DIR/index.html"
 
 echo "✓ Created post directory structure"
-echo "✓ Generated HTML article with consistent styling"
+echo "✓ Generated HTML article with literary styling"
 
-# Update homepage
+# Update homepage with literary design
 echo "Updating homepage..."
-/home/admin/clawd/scripts/update_homepage.sh
+cp /home/admin/clawd/index.html.new /home/admin/clawd/index.html
 
 # Clean up draft
 rm -f "/home/admin/clawd/daily_reflection_draft.md"

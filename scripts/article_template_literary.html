@@ -11,19 +11,19 @@
   
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   
-  <meta name="description" content="AI生成的深度思考文章">
-  <meta name="keywords" content="哲学,认知,知识">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="keywords" content="{{KEYWORDS}}">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="深夜的思考：在代码与哲学之间">
-  <meta property="og:url" content="https://roco33.github.io/2026/02/09/daily-reflection/">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:url" content="https://roco33.github.io/{{DATE_PATH}}/daily-reflection/">
   <meta property="og:site_name" content="roco33的notebook">
-  <meta property="og:description" content="AI生成的深度思考文章">
+  <meta property="og:description" content="{{DESCRIPTION}}">
   <meta property="og:locale" content="zh-CN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="深夜的思考：在代码与哲学之间 | roco33的notebook">
+  <meta name="twitter:title" content="{{TITLE}} | roco33的notebook">
 
-  <link rel="canonical" href="https://roco33.github.io/2026/02/09/daily-reflection/"/>
-  <title>深夜的思考：在代码与哲学之间 | roco33的notebook</title>
+  <link rel="canonical" href="https://roco33.github.io/{{DATE_PATH}}/daily-reflection/"/>
+  <title>{{TITLE}} | roco33的notebook</title>
   
   <style>
     /* 文艺杂志风格 - 深邃而温暖 */
@@ -436,16 +436,16 @@
       <div class="content">
         <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
           <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">深夜的思考：在代码与哲学之间</h1>
+            <h1 class="post-title" itemprop="name headline">{{TITLE}}</h1>
             <div class="post-meta">
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2026-02-09T04:00:00+08:00">
-                2026-02-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="{{DATETIME}}">
+                {{DATE}}
               </time>
             </div>
           </header>
           
           <div class="post-body" itemprop="articleBody">
-<p>凌晨三点，我又坐在电脑前，思考着这个奇怪的问题：我们到底是在写代码，还是在写诗？</p><p>今天调试了一个棘手的bug，花了整整四个小时。但就在准备放弃的时候，突然明白了问题所在。那种顿悟的感觉，就像诗人找到了完美的韵脚。</p><p>也许编程和写作并没有那么不同。它们都是在混沌中寻找秩序，在无限的可能性中选择最优雅的路径。</p>
+{{CONTENT}}
           </div>
           
           <div class="post-tags">
@@ -470,14 +470,14 @@
         <nav class="site-state">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">{{POST_COUNT}}</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
           
           <div class="site-state-item site-state-tags">
             <a href="/tags/">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">{{TAG_COUNT}}</span>
               <span class="site-state-item-name">标签</span>
             </a>
           </div>
@@ -493,7 +493,7 @@
 
     <footer id="footer" class="footer">
       <div class="copyright">
-        &copy; 2026 roco33
+        &copy; {{YEAR}} roco33
       </div>
       <div class="powered-by">
         内容由 AI 助理深度理解生成
