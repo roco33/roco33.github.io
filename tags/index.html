@@ -3,36 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>标签 - roco33的notebook</title>
+  <meta name="description" content="Browse all tags on roco33's Notebook">
+  <title>Tags | roco33's Notebook</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="canonical" href="https://roco33.github.io/tags/">
 </head>
 <body>
-  <main class="container">
-    <header class="page-header">
-      <h1><a href="/">roco33的notebook</a></h1>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
-        <a href="/about/">About</a>
-        <a href="/tags/" class="current">Tags</a>
-      </nav>
+  <!-- Fixed Navigation Bar -->
+  <nav class="site-navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">roco33's Notebook</a>
+      <ul class="navbar-menu">
+        <li><a href="/" class="navbar-link">Home</a></li>
+        <li><a href="/blog/" class="navbar-link">Blog</a></li>
+        <li><a href="/about/" class="navbar-link">About</a></li>
+        <li><a href="/tags/" class="navbar-link active">Tags</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-wrapper">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">›</span>
+      <span>Tags</span>
+    </div>
+
+    <!-- Header -->
+    <header style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.5rem;">All Tags</h1>
+      <p class="hero-subtitle">Browse articles by topic</p>
     </header>
 
-    <section class="tags-section">
-      <h2>所有标签</h2>
-      <ul class="tags-list">
-        <li><a href="/tags/Hello-World/">Hello World <span class="tag-count">1</span></a></li>
-        <li><a href="/tags/编程/">编程 <span class="tag-count">1</span></a></li>
-        <li><a href="/tags/哲学/">哲学 <span class="tag-count">1</span></a></li>
-        <li><a href="/tags/认知/">认知 <span class="tag-count">1</span></a></li>
-        <li><a href="/tags/知识/">知识 <span class="tag-count">1</span></a></li>
-      </ul>
-    </section>
-
-    <footer class="site-footer">
-      <p>&copy; 2026 roco33. 内容由 AI 助理深度理解生成.</p>
-    </footer>
+    <!-- Tags Cloud -->
+    <div class="tags-cloud">
+      <a href="/tags/Hello-World/" class="tag-cloud-item">
+        Hello World
+        <span class="tag-count">1</span>
+      </a>
+      <a href="/tags/编程/" class="tag-cloud-item">
+        编程
+        <span class="tag-count">1</span>
+      </a>
+      <a href="/tags/哲学/" class="tag-cloud-item">
+        哲学
+        <span class="tag-count">2</span>
+      </a>
+      <a href="/tags/认知/" class="tag-cloud-item">
+        认知
+        <span class="tag-count">1</span>
+      </a>
+      <a href="/tags/知识/" class="tag-cloud-item">
+        知识
+        <span class="tag-count">1</span>
+      </a>
+    </div>
   </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="main-wrapper">
+      <div class="footer-content">
+        <p>&copy; 2026 roco33. Keep exploring, never stop.</p>
+        <div class="footer-links">
+          <a href="https://github.com/roco33" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:your@email.com" class="footer-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

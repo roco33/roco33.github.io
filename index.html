@@ -3,35 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="roco33的数字笔记本 - 专注深度思考与文字表达">
-  <title>roco33</title>
+  <meta name="description" content="roco33's Notebook - A digital notebook for deep thoughts, technical exploration, and philosophical insights.">
+  <title>roco33's Notebook</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="canonical" href="https://roco33.github.io/">
 </head>
 <body>
-  <main class="container">
-    <header class="site-header">
-      <h1 class="site-title">roco33</h1>
-      <p class="site-description">数字笔记本 · 深度思考 · 文字表达</p>
-    </header>
-
-    <nav class="main-nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/tags/">Tags</a></li>
+  <!-- Fixed Navigation Bar -->
+  <nav class="site-navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand">roco33's Notebook</a>
+      <ul class="navbar-menu">
+        <li><a href="/" class="navbar-link active">Home</a></li>
+        <li><a href="/blog/" class="navbar-link">Blog</a></li>
+        <li><a href="/about/" class="navbar-link">About</a></li>
+        <li><a href="/tags/" class="navbar-link">Tags</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
 
-    <section class="home-content">
-      <p>这里是 roco33 的数字笔记本，记录深度思考、技术探索和哲学感悟。</p>
-      <p>每一篇文章都是对世界的理解与表达，希望能与你产生共鸣。</p>
+  <!-- Main Content -->
+  <main class="main-wrapper">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome to My Digital Notebook</h1>
+      <p class="hero-subtitle">A space for deep thoughts, technical exploration, and philosophical insights. Every article is an understanding and expression of the world.</p>
     </section>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 roco33. 保持神秘，持续探索。</p>
-    </footer>
+    <!-- Posts Section -->
+    <section class="posts-section">
+      <h2 style="text-align: center; font-size: 2rem; color: var(--color-primary); font-family: var(--font-heading); font-weight: 700; margin-bottom: 2rem;">Latest Posts</h2>
+
+      <div class="posts-grid">
+        <!-- Post Card 1 -->
+        <article class="post-card">
+          <h3 class="post-card-title">
+            <a href="/blog/2026/02/09/daily-reflection/">认知的边界</a>
+          </h3>
+          <p class="post-card-excerpt">凌晨四点，我坐在书桌前思考一个古老的问题：我们如何理解这个世界？知识不是可以收集和存储的物品，而更像是一条流动的河流。</p>
+          <div class="post-card-meta">
+            <time class="post-card-date" datetime="2026-02-09">2026年2月9日</time>
+            <div class="post-card-tags">
+              <a href="/tags/哲学/" class="tag-badge">哲学</a>
+              <a href="/tags/认知/" class="tag-badge">认知</a>
+              <a href="/tags/知识/" class="tag-badge">知识</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post Card 2 -->
+        <article class="post-card">
+          <h3 class="post-card-title">
+            <a href="/blog/2026/02/08/hello-world/">Hello World: 从零开始的数字之旅</a>
+          </h3>
+          <p class="post-card-excerpt">"Hello, World!" 程序是每个程序员的启蒙仪式，象征着数字世界的入口。它不仅是第一行代码，更是对未知的探索和创造的开始。</p>
+          <div class="post-card-meta">
+            <time class="post-card-date" datetime="2026-02-08">2026年2月8日</time>
+            <div class="post-card-tags">
+              <a href="/tags/Hello-World/" class="tag-badge">Hello World</a>
+              <a href="/tags/编程/" class="tag-badge">编程</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="main-wrapper">
+      <div class="footer-content">
+        <p>&copy; 2026 roco33. Keep exploring, never stop.</p>
+        <div class="footer-links">
+          <a href="https://github.com/roco33" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:your@email.com" class="footer-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
