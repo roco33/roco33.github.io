@@ -1,323 +1,38 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="theme-color" content="#ff6b35">
-  
-  <!-- 文艺杂志字体 -->
-  <link href="//fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  
-  <link rel="canonical" href="https://roco33.github.io/tags/"/>
-  <title>标签 | roco33的notebook</title>
-  
-  <style>
-    /* 文艺杂志风格 - 深邃而温暖 */
-    :root {
-      --bg-primary: #121212;
-      --bg-secondary: #1a1a1a;
-      --text-primary: #f5f5f5;
-      --text-secondary: #b0b0b0;
-      --accent-primary: #ff6b35;
-      --accent-secondary: #ff8c5a;
-      --border-color: #2a2a2a;
-      --shadow-color: rgba(0, 0, 0, 0.3);
-      
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body: 'Lora', serif;
-      
-      --max-width: 800px;
-      --container-padding: 2rem;
-    }
-    
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg-primary: #fafafa;
-        --bg-secondary: #ffffff;
-        --text-primary: #1a1a1a;
-        --text-secondary: #666666;
-        --accent-primary: #d45a2a;
-        --accent-secondary: #e67a4a;
-        --border-color: #e0e0e0;
-        --shadow-color: rgba(0, 0, 0, 0.1);
-      }
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: var(--font-body);
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(255, 107, 53, 0.03) 0%, transparent 20%);
-      min-height: 100vh;
-      transition: background 0.3s ease;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--container-padding);
-    }
-    
-    /* Header Styles */
-    .header {
-      padding: 3rem 0 2rem 0;
-      text-align: center;
-      position: relative;
-    }
-    
-    .site-title {
-      font-family: var(--font-display);
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--text-primary);
-      letter-spacing: -0.5px;
-      text-shadow: 0 2px 4px var(--shadow-color);
-      transition: transform 0.3s ease;
-    }
-    
-    .site-title:hover {
-      transform: translateY(-2px);
-    }
-    
-    .site-subtitle {
-      font-family: var(--font-body);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin: 1rem 0 0 0;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-    
-    /* Main Layout */
-    .main {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      min-height: calc(100vh - 200px);
-      margin-bottom: 4rem;
-    }
-    
-    /* Content Area */
-    .content {
-      padding: 1rem 0;
-    }
-    
-    .tag-section {
-      background: var(--bg-secondary);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2.5rem;
-      transition: all 0.3s ease;
-    }
-    
-    .tag-section:hover {
-      border-color: var(--accent-primary);
-      box-shadow: 0 12px 32px rgba(255, 107, 53, 0.15);
-    }
-    
-    .tag-title {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    
-    .tag-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0;
-    }
-    
-    .tag-item {
-      margin: 0;
-    }
-    
-    .tag-link {
-      display: inline-flex;
-      align-items: center;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-    }
-    
-    .tag-link:hover {
-      background: var(--accent-primary);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
-      border-color: var(--accent-primary);
-    }
-    
-    .tag-count {
-      background: var(--accent-primary);
-      color: white;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-family: var(--font-mono);
-      margin-left: 0.6rem;
-      font-weight: bold;
-    }
-    
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 3rem 0 2rem 0;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .copyright {
-      margin-bottom: 0.5rem;
-    }
-    
-    .powered-by {
-      font-style: italic;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .site-title {
-        font-size: 2.4rem;
-      }
-      
-      .tag-title {
-        font-size: 1.8rem;
-      }
-      
-      .container {
-        padding: 0 1.5rem;
-      }
-      
-      .tag-section {
-        padding: 2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .site-title {
-        font-size: 2rem;
-      }
-      
-      .tag-title {
-        font-size: 1.6rem;
-      }
-      
-      .container {
-        padding: 0 1rem;
-      }
-      
-      .tag-section {
-        padding: 1.5rem;
-      }
-      
-      .tag-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.95rem;
-      }
-    }
-    
-    /* Smooth transitions */
-    * {
-      transition: color 0.2s ease, background-color 0.2s ease;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>标签 - roco33的notebook</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="https://roco33.github.io/tags/">
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container">
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="site-brand-wrapper">
-        <h1 class="site-title">roco33的notebook</h1>
-        <p class="site-subtitle">AI-assisted deep understanding of daily content</p>
-      </div>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1><a href="/">roco33的notebook</a></h1>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/tags/" class="current">Tags</a>
+      </nav>
     </header>
 
-    <main id="main" class="main">
-      <div class="content">
-        <div class="tag-section">
-          <h1 class="tag-title">标签</h1>
-          <ul class="tag-list">
-            <li class="tag-item">
-              <a href="/tags/Hello-World/" class="tag-link">
-                Hello World
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/编程/" class="tag-link">
-                编程
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/哲学/" class="tag-link">
-                哲学
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/认知/" class="tag-link">
-                认知
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-            <li class="tag-item">
-              <a href="/tags/知识/" class="tag-link">
-                知识
-                <span class="tag-count">1</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
+    <section class="tags-section">
+      <h2>所有标签</h2>
+      <ul class="tags-list">
+        <li><a href="/tags/Hello-World/">Hello World <span class="tag-count">1</span></a></li>
+        <li><a href="/tags/编程/">编程 <span class="tag-count">1</span></a></li>
+        <li><a href="/tags/哲学/">哲学 <span class="tag-count">1</span></a></li>
+        <li><a href="/tags/认知/">认知 <span class="tag-count">1</span></a></li>
+        <li><a href="/tags/知识/">知识 <span class="tag-count">1</span></a></li>
+      </ul>
+    </section>
 
-    <footer id="footer" class="footer">
-      <div class="copyright">
-        &copy; 2026 roco33
-      </div>
-      <div class="powered-by">
-        内容由 AI 助理深度理解生成
-      </div>
+    <footer class="site-footer">
+      <p>&copy; 2026 roco33. 内容由 AI 助理深度理解生成.</p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>

@@ -1,140 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="theme-color" content="#222">
-  
-  <link href="/css/main.css" rel="stylesheet" type="text/css" />
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="关于 roco33 的数字笔记本">
+  <link rel="stylesheet" href="/css/style.css"/>
   <link rel="canonical" href="https://roco33.github.io/about/"/>
-  <title>About | roco33的notebook</title>
-  
-  <style>
-    :root {
-      --glass-bg: rgba(255, 255, 255, 0.9);
-      --glass-border: rgba(255, 255, 255, 0.3);
-      --glass-blur: 12px;
-      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --primary-color: #222;
-      --secondary-color: #666;
-    }
-    
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --glass-bg: rgba(34, 34, 34, 0.9);
-        --glass-border: rgba(255, 255, 255, 0.15);
-        --primary-color: #fff;
-        --secondary-color: #aaa;
-      }
-    }
-    
-    .glass-effect {
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 600px;
-      text-align: center;
-    }
-    
-    .avatar-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-    
-    body { 
-      font-family: var(--font-family); 
-      line-height: 1.6; 
-      margin: 0; 
-      padding: 0; 
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
-      color: var(--primary-color);
-    }
-    
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-      }
-    }
-    
-    .container { 
-      max-width: 1200px; 
-      margin: 0 auto; 
-      padding: 0 20px; 
-    }
-    
-    .header { 
-      padding: 2rem 0 1rem 0; 
-      text-align: center;
-    }
-    
-    .site-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0;
-    }
-    
-    .main { 
-      display: flex; 
-      min-height: calc(100vh - 200px); 
-    }
-    
-    .content { 
-      flex: 1; 
-      padding: 2rem 0; 
-    }
-    
-    .footer { 
-      text-align: center; 
-      padding: 2rem 0; 
-      color: var(--secondary-color);
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 768px) {
-      .main { 
-        flex-direction: column; 
-      }
-      .site-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <title>关于 | roco33的notebook</title>
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-  <div class="container">
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="site-brand-wrapper">
-        <h1 class="site-title">roco33的notebook</h1>
-      </div>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1><a href="/">roco33的notebook</a></h1>
+      <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/tags/">Tags</a>
+      </nav>
     </header>
-
-    <main id="main" class="main">
-      <div class="content">
-        <div class="glass-effect">
-          <img class="avatar-img" src="/images/avatar.jpg" alt="roco33 avatar" />
-          <h1>About</h1>
-          <p>保持神秘。</p>
-          <p style="margin-top: 1.5rem; color: var(--secondary-color); font-size: 0.9rem;">
-            本网站内容由 roco33 的 AI 助理基于对日常所见内容的深入理解生成。
-          </p>
-        </div>
+    
+    <article class="content">
+      <h2>关于这个笔记本</h2>
+      <p>这是一个专注于深度思考和理解的数字空间。在这里，我记录对日常内容的深入理解，探索知识的本质和认知的边界。</p>
+      
+      <h2>写作理念</h2>
+      <p>每一篇文章都是人机协作的产物。AI 助理帮助我深入理解复杂概念，而我负责注入真实的人类视角和思考。这不仅是技术的展示，更是对学习和理解过程的反思。</p>
+      
+      <h2>保持神秘</h2>
+      <p>在这个信息过载的时代，我选择保持一定的神秘感。重点不在于我是谁，而在于我们共同思考的内容。持续探索，永不停止。</p>
+      
+      <div class="footer-note">
+        <p>内容由 AI 助理深度理解生成</p>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="copyright">
-        &copy; 2026 roco33
-      </div>
-    </footer>
-  </div>
+    </article>
+  </main>
 </body>
 </html>
