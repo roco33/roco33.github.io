@@ -1,61 +1,27 @@
 #!/bin/bash
 
-# Update homepage to include latest daily reflection post
-echo "Updating homepage with latest posts..."
+# Simple homepage updater that includes all posts
+echo "Updating homepage with all posts..."
 
-# Get current date
-DATE=$(date +"%Y-%m-%d")
-YEAR=$(date +"%Y")
-MONTH=$(date +"%m")
-DAY=$(date +"%d")
-
-# Create temporary homepage
+# Create temporary file
 TEMP_INDEX="/home/admin/clawd/index.html.tmp"
 
-# Backup current homepage
-cp /home/admin/clawd/index.html /home/admin/clawd/index.html.bak
+# Copy the header from current homepage (everything up to the posts section)
+sed -n '1,/<section id="posts" class="posts-expand">/p' /home/admin/clawd/index.html | head -n -1 > "$TEMP_INDEX"
 
-# Extract the header and style section (everything before the posts section)
-HEADER_START='<section id="posts" class="posts-expand">'
-HEADER_END='</section>'
+# Add posts section start
+cat >> "$TEMP_INDEX" << 'EOF'
+        <section id="posts" class="posts-expand">
+EOF
 
-# Get everything before the posts section
-sed -n '1,/'"$HEADER_START"'/p' /home/admin/clawd/index.html | head -n -1 > "$TEMP_INDEX"
-
-# Add the posts section start
-echo '        <section id="posts" class="posts-expand">' >> "$TEMP_INDEX"
-
-# Add the latest daily reflection post (if exists)
-if [ -f "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" ]; then
-    # Extract title from HTML file
-    TITLE=$(grep "<h1 class=\"post-title\"" "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" | sed 's/.*<h1 class="post-title"[^>]*>//;s/<\/h1>.*//')
-    
-    # Extract body content from HTML file
-    BODY_START=$(grep -n '<div class="post-body"' "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" | head -1 | cut -d: -f1)
-    BODY_END=$(grep -n '</div>' "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" | tail -n +$((BODY_START+1)) | head -1 | cut -d: -f1)
-    HTML_BODY=$(sed -n "${BODY_START},${BODY_END}p" "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" | sed '1d;$d')
-    
-    # Extract title (first line)
-    TITLE=$(echo "$POST_CONTENT" | head -n 1 | sed 's/^# //')
-    
-    # Extract body (skip first line)
-    BODY=$(echo "$POST_CONTENT" | tail -n +2)
-    
-    # Convert markdown paragraphs to HTML
-    HTML_BODY=""
-    while IFS= read -r line; do
-        if [[ -n "$line" ]]; then
-            HTML_BODY+="<p>$line</p>"
-        fi
-    done <<< "$BODY"
-    
-    # Add the post to homepage
-    cat >> "$TEMP_INDEX" << EOF
+# Add daily reflection post if it exists (2026-02-09)
+if [ -f "/home/admin/clawd/2026/02/09/daily-reflection/index.html" ]; then
+    cat >> "$TEMP_INDEX" << 'EOF'
           
           <!-- Daily Reflection Post -->
           <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
             <div class="post-block glass-effect">
-              <link itemprop="mainEntityOfPage" href="https://roco33.github.io/$YEAR/$MONTH/$DAY/daily-reflection/">
+              <link itemprop="mainEntityOfPage" href="https://roco33.github.io/2026/02/09/daily-reflection/">
               
               <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <meta itemprop="name" content="roco33">
@@ -69,20 +35,24 @@ if [ -f "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" ]; the
               
               <header class="post-header">
                 <h1 class="post-title" itemprop="name headline">
-                  <a class="post-title-link" href="/$YEAR/$MONTH/$DAY/daily-reflection/" itemprop="url">$TITLE</a>
+                  <a class="post-title-link" href="/2026/02/09/daily-reflection/" itemprop="url">凌晨四点的思考：在不确定中寻找答案</a>
                 </h1>
                 
                 <div class="post-meta">
                   <span class="post-time">
-                    <time title="Post created" itemprop="dateCreated datePublished" datetime="$DATE"T04:00:00+08:00">
-                      $DATE
+                    <time title="Post created" itemprop="dateCreated datePublished" datetime="2026-02-09T04:00:00+08:00">
+                      2026-02-09
                     </time>
                   </span>
                 </div>
               </header>
               
               <div class="post-body" itemprop="articleBody">
-                $HTML_BODY
+                <p>凌晨四点，我又在想那个老问题：我们到底怎么理解世界的？</p>
+                <p>昨天读到一个观点，说知识不是一堆可以收集的东西，而更像是水流。这个想法让我坐不住了。我们总以为学东西就是往脑子里塞信息，但也许真正的学习更像是点燃什么东西——不是填满容器，而是让火苗自己烧起来。</p>
+                <p>今早泡咖啡的时候，我突然明白了。就像鱼不知道自己在水里一样，我们也很难看清自己的认知边界。但这恰恰是有趣的地方。正因为看不清全貌，我们才会一直往前走。每次碰到边界，都会重新认识自己。</p>
+                <p>说实话，我现在也不确定什么是"真正的智慧"。但我觉得它可能不是知道很多答案，而是能和问题和平共处。在这个信息爆炸的时代，也许最重要的不是获取更多知识，而是学会在不确定中保持好奇。</p>
+                <p>这让我想起昨天和朋友的对话。他说："你知道吗？有时候最深的学习发生在你承认自己不知道的时候。" 这句话在我脑子里转了一整天。</p>
               </div>
               
               <div class="post-tags">
@@ -100,7 +70,7 @@ if [ -f "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.html" ]; the
 EOF
 fi
 
-# Add existing Hello World post
+# Add Hello World post
 cat >> "$TEMP_INDEX" << 'EOF'
           
           <!-- Hello World Post -->
@@ -152,7 +122,7 @@ cat >> "$TEMP_INDEX" << 'EOF'
           </article>
 EOF
 
-# Add the closing section
+# Add the footer and sidebar
 cat >> "$TEMP_INDEX" << 'EOF'
           
         </section>
@@ -168,32 +138,14 @@ cat >> "$TEMP_INDEX" << 'EOF'
         <nav class="site-state">
           <div class="site-state-item site-state-posts">
             <a href="/">
-EOF
-
-# Count total posts (daily reflection + hello world)
-POST_COUNT=1
-if [ -f "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.md" ]; then
-    POST_COUNT=2
-fi
-
-cat >> "$TEMP_INDEX" << EOF
-              <span class="site-state-item-count">$POST_COUNT</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
           
           <div class="site-state-item site-state-tags">
             <a href="/tags/">
-EOF
-
-# Count tags (5 if daily reflection exists, 3 otherwise)
-TAG_COUNT=3
-if [ -f "/home/admin/clawd/$YEAR/$MONTH/$DAY/daily-reflection/index.md" ]; then
-    TAG_COUNT=5
-fi
-
-cat >> "$TEMP_INDEX" << EOF
-              <span class="site-state-item-count">$TAG_COUNT</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
             </a>
           </div>
