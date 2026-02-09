@@ -27,10 +27,14 @@ echo "Post directory: $POST_DIR"
 
 mkdir -p "$POST_DIR"
 
-# Move draft to post directory
-cp "/home/admin/clawd/daily_reflection_draft.md" "$POST_DIR/index.md"
+# Generate HTML file using Python template engine
+python3 /home/admin/clawd/scripts/generate_article.py \
+    "/home/admin/clawd/daily_reflection_draft.md" \
+    "/home/admin/clawd/scripts/article_template.html" \
+    "$POST_DIR/index.html"
+
 echo "✓ Created post directory structure"
-echo "✓ Moved draft to post directory"
+echo "✓ Generated HTML article with consistent styling"
 
 # Update homepage
 echo "Updating homepage..."

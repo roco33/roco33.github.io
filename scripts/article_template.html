@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta name="theme-color" content="#222">
+  
+  <link href="//fonts.googleapis.com/css?family=Inter:300,400,500,600,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css" />
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="keywords" content="{{KEYWORDS}}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:url" content="https://roco33.github.io/{{DATE_PATH}}/daily-reflection/">
+  <meta property="og:site_name" content="roco33的notebook">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{TITLE}} | roco33的notebook">
+
+  <link rel="canonical" href="https://roco33.github.io/{{DATE_PATH}}/daily-reflection/"/>
+  <title>{{TITLE}} | roco33的notebook</title>
+  
+  <style>
+    /* Refined Minimalist Tech Style with Glass Effect */
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.9);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-blur: 12px;
+      --max-width: 800px;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --primary-color: #222;
+      --secondary-color: #666;
+      --accent-color: #007acc;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --glass-bg: rgba(34, 34, 34, 0.9);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --primary-color: #fff;
+        --secondary-color: #aaa;
+        --accent-color: #4ecaff;
+      }
+    }
+    
+    .glass-effect {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .post-body {
+      line-height: 1.7;
+      font-family: var(--font-family);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      color: var(--primary-color);
+    }
+    
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      background: rgba(0,0,0,0.05);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      color: var(--primary-color);
+    }
+    
+    pre {
+      background: rgba(0,0,0,0.05);
+      padding: 1.2rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      code, pre {
+        background: rgba(255,255,255,0.1);
+      }
+    }
+    
+    body { 
+      font-family: var(--font-family); 
+      line-height: 1.6; 
+      margin: 0; 
+      padding: 0; 
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+      color: var(--primary-color);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      }
+    }
+    
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+    
+    .header { 
+      padding: 2rem 0 1rem 0; 
+      text-align: center;
+    }
+    
+    .site-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .site-subtitle {
+      font-size: 1.1rem;
+      color: var(--secondary-color);
+      margin: 0.5rem 0 0 0;
+    }
+    
+    .main { 
+      display: flex; 
+      min-height: calc(100vh - 200px); 
+      gap: 2rem;
+    }
+    
+    .content { 
+      flex: 1; 
+      padding: 2rem 0; 
+    }
+    
+    .sidebar { 
+      width: 280px; 
+      padding: 1rem 0;
+    }
+    
+    .footer { 
+      text-align: center; 
+      padding: 2rem 0; 
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .post-meta { 
+      color: var(--secondary-color); 
+      font-size: 0.9rem; 
+      margin-bottom: 1rem; 
+    }
+    
+    .tag-link {
+      display: inline-block;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      margin: 0 0.25rem 0.25rem 0;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 0.85rem;
+    }
+    
+    .ai-attribution {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--glass-border);
+    }
+    
+    .ai-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .site-state-item {
+      margin-bottom: 1rem;
+    }
+    
+    .site-state-item a {
+      text-decoration: none;
+      color: var(--primary-color);
+      display: block;
+    }
+    
+    .site-state-item-count {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+    }
+    
+    .site-state-item-name {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
+    
+    @media (max-width: 768px) {
+      .main { 
+        flex-direction: column; 
+      }
+      .sidebar { 
+        width: 100%; 
+        order: -1; 
+      }
+      .site-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="site-brand-wrapper">
+        <h1 class="site-title">roco33的notebook</h1>
+        <p class="site-subtitle">AI-assisted deep understanding of daily content</p>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content">
+        <div id="posts" class="posts-expand">
+          <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+            <div class="post-block glass-effect">
+              <link itemprop="mainEntityOfPage" href="https://roco33.github.io/{{DATE_PATH}}/daily-reflection/">
+              
+              <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <meta itemprop="name" content="roco33">
+                <meta itemprop="description" content="">
+                <meta itemprop="image" content="/images/avatar.jpg">
+              </span>
+              
+              <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <meta itemprop="name" content="roco33的notebook">
+              </span>
+              
+              <header class="post-header">
+                <h1 class="post-title" itemprop="name headline">{{TITLE}}</h1>
+                
+                <div class="post-meta">
+                  <time title="Post created" itemprop="dateCreated datePublished" datetime="{{DATETIME}}">
+                    {{DATE}}
+                  </time>
+                </div>
+              </header>
+              
+              <div class="post-body" itemprop="articleBody">
+{{CONTENT}}
+              </div>
+              
+              <div class="post-tags">
+                <a href="/tags/哲学/" class="tag-link" rel="tag">哲学</a>
+                <a href="/tags/认知/" class="tag-link" rel="tag">认知</a>
+                <a href="/tags/知识/" class="tag-link" rel="tag">知识</a>
+              </div>
+              
+              <div class="ai-attribution">
+                <div class="ai-icon">AI</div>
+                <span>本文由 roco33 的 AI 助理基于对日常内容的深入理解生成</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      
+      <aside id="sidebar" class="sidebar glass-effect">
+        <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="roco33" />
+          <p class="site-author-name" itemprop="name">roco33</p>
+          <p class="site-description" itemprop="description">保持神秘。</p>
+        </div>
+        
+        <nav class="site-state">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">{{POST_COUNT}}</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+          
+          <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+              <span class="site-state-item-count">{{TAG_COUNT}}</span>
+              <span class="site-state-item-name">标签</span>
+            </a>
+          </div>
+        </nav>
+        
+        <div class="links-of-author">
+          <a href="https://github.com/roco33" target="_blank" title="GitHub" class="tag-link">
+            GitHub
+          </a>
+        </div>
+      </aside>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; {{YEAR}} roco33
+      </div>
+      <div class="powered-by">
+        内容由 AI 助理深度理解生成
+      </div>
+    </footer>
+    
+    <script>
+      // Dark mode support
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+    </script>
+  </div>
+</body>
+</html>
