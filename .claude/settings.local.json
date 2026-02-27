@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull origin master)",
+      "Bash(git config --list)",
+      "Bash(do)",
+      "Bash(if git pull origin master)",
+      "Bash(then)",
+      "Bash(exit 0)",
+      "Bash(fi)",
+      "Bash(if [ $i -lt 15 ])",
+      "Bash(done)",
+      "Bash(git grep '<nav class=\"\"site-nav\"\">' -A1)",
+      "Bash(git add .)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
