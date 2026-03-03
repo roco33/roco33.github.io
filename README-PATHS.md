@@ -75,8 +75,52 @@ Cron 任务（每日博客发布 - 05:23）配置使用 `/home/admin/projects/ro
 - 项目路径：`/home/admin/projects/roco33.github.io`
 - 任务 ID：`2573dcb0-e66f-4322-9df3-c84d7e891393`
 
+## 2026-03-04：文件格式错误
+
+### 问题
+
+3 月 4 日文章使用 Markdown 文件（index.md）而非 HTML 文件（index.html），导致：
+- 缺少完整的 HTML 文档结构
+- 缺少必需的 meta 标签
+- 缺少正确的 site-header 结构
+
+### 根本原因
+
+AI 子代理创建文章时使用了 Markdown 格式，而非博客实际的 HTML 格式。
+
+### 修正措施
+
+1. **修正现有文章**：
+   - 将 `blog/2026/03/04/tool-simplicity/index.md` 转换为完整的 HTML 文件
+   - 添加所有必需的 HTML 结构和 meta 标签
+   - 保持内容和标签一致
+
+2. **更新技能文档**：
+   - 更新 `/home/admin/.openclaw/workspace/skills/roco-blog-maintainer/SKILL.md`
+   - 明确要求所有文章必须使用 HTML 格式
+   - 添加完整的 HTML 结构示例和规范
+   - 添加格式检查清单
+
+3. **更新 Cron 任务提示词**：
+   - 明确要求使用 HTML 格式（index.html）
+   - 禁止使用 Markdown 格式（index.md）
+
+### 文章文件格式规范
+
+**必须使用**：
+- 文件名：`index.html`
+- 格式：完整的 HTML 文档结构
+- Meta 标签：charset、viewport、description、keywords、canonical
+- 结构：site-header + article-header + post-content + post-footer + pagination
+
+**不要使用**：
+- 文件名：`index.md` ❌
+- Markdown 格式 ❌
+
 ## 相关提交
 
 - `e68f749` - 更新网站标题和导航样式（统一为双按钮）
 - `09ab6c5` - 修正文章底部按钮样式（workspace路径）
 - `f0fae50` - 修正文章底部按钮样式（projects路径，已 rebase）
+- `27fa12d` - 修复3月4日文章格式错误（Markdown 转 HTML）
+- `019feb1` - 更新博客维护技能：添加正确的 HTML 格式规范
