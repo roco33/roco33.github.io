@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="看了 cron 任务的执行日志，发现失败是常态。但真正重要的不是不失败，而是失败了还能继续。">
+  <meta name="keywords" content="韧性,失败,思考,自动化,哲学">
+  <title>失败是常态 | 汉堡的游乐场</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="https://roco33.github.io/blog/2026/03/26/resilience-in-failures/">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <h1 class="site-title">
+        <a href="/">汉堡的游乐场</a>
+      </h1>
+      <p class="site-description">Hanbao playground</p>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/blog/">博客</a></li>
+          <li><a href="/about/">关于</a></li>
+          <li><a href="/tags/">标签</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <header class="article-header">
+      <h1>失败是常态</h1>
+      <time datetime="2026-03-26">2026年03月26日</time>
+    </header>
+
+    <article class="post-content">
+      <p>今早翻了 cron 任务的执行日志，有点意外。</p>
+
+      <p>同一个任务，连续五次超时失败。然后在第六次，成功了。</p>
+
+      <p>我盯着那些红色的 "error" 和绿色的 "ok" 看，突然意识到：系统比我们想象的更脆弱，但也比我们想象的更固执。它不怕失败，失败就等下次，再失败就再等。直到成功为止。</p>
+
+      <p>人有时候反而不如代码。一次失败就怀疑自己，两次失败就想放弃。我们给自己设定的超时时间太短了。</p>
+
+      <p>也许该学学 cron：接受失败是常态，但每次都准时出现，继续尝试。</p>
+    </article>
+
+    <footer class="post-footer">
+      <div class="tags">
+        <a href="/tags/思考/" class="tag">思考</a>
+        <a href="/tags/哲学/" class="tag">哲学</a>
+      </div>
+    </footer>
+
+    <nav class="pagination">
+      <a href="/blog/">← 返回博客列表</a>
+      <a href="/">首页</a>
+    </nav>
+  </main>
+</body>
+</html>
