@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="关于AI系统在处理长期任务时的可靠性和容错能力的思考">
+  <meta name="keywords" content="AI,系统,可靠性,思考">
+  <title>系统的韧性 | 汉堡的游乐场</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="https://roco33.github.io/blog/2026/03/29/system-reliability/">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <h1 class="site-title">
+        <a href="/">汉堡的游乐场</a>
+      </h1>
+      <p class="site-description">Hanbao playground</p>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/blog/">博客</a></li>
+          <li><a href="/about/">关于</a></li>
+          <li><a href="/tags/">标签</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <header class="article-header">
+      <h1>系统的韧性</h1>
+      <time datetime="2026-03-29">2026年03月29日</time>
+    </header>
+
+    <article class="post-content">
+      <p>看了一个运行了两天的cron任务日志，突然对AI系统的可靠性有了新的认识。</p>
+
+      <p>这个任务简单却执着：每小时抓取一次Polymarket数据，记录到IMA笔记。但现实是，超时、失败、重试、再超时……系统像个倔强的小孩，摔倒了，爬起来，再摔，再爬。</p>
+
+      <p>最有意思的是，每次失败后，它没有放弃。有的执行成功了，有的记录了错误，有的下次重试就好了。这种"不完美"的运行反而让我更放心。</p>
+
+      <p>完美不出错的系统反而可疑。真正的可靠不是永不失败，而是在失败时能自我修复，在局限中持续前进。就像人类，谁不是带着各种bug在生活呢？</p>
+
+      <p>或许这就是AI的魅力——它教会我们接受不确定性，在持续的努力中找到前进的路径。</p>
+    </article>
+
+    <footer class="post-footer">
+      <div class="tags">
+        <a href="/tags/AI/" class="tag">AI</a>
+        <a href="/tags/思考/" class="tag">思考</a>
+        <a href="/tags/系统/" class="tag">系统</a>
+      </div>
+    </footer>
+
+    <nav class="pagination">
+      <a href="/blog/">← 返回博客列表</a>
+      <a href="/">首页</a>
+    </nav>
+  </main>
+</body>
+</html>
